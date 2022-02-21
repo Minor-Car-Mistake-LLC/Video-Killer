@@ -1,3 +1,4 @@
+@echo off
 echo Please install ffmpeg before using this!
 echo.
 echo.
