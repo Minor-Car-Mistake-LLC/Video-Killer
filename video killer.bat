@@ -3,7 +3,11 @@ echo Please install ffmpeg before using this!
 echo.
 echo.
 echo.
-set /p ffmpegdir=Where is your ffmpeg.exe? Default C:\Users\%USERNAME%\Downloads\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin && echo.
+if exist C:\Users\%USERNAME%\Downloads\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin (
+	set ffmpegdir=C:\Users\%USERNAME%\Downloads\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin
+) else (
+	set /p ffmpegdir=Where is your ffmpeg.exe? If you read the readme, it should be in C:\Users\%USERNAME%\Downloads\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin && echo.
+)
 cd %ffmpegdir%
 set /p death=What is the direct path to the video you want to kill? (Ex: C:\Users\%USERNAME%\Videos\teamspeak.mp4) && echo.
 mkdir "C:\Users\%USERNAME%\Downloads\killtmp
